@@ -1,0 +1,149 @@
+/* ============================================================
+   RESPONSIVE.CSS — Frontend Cliente
+   Classes utilitárias aplicadas aos cabeçalhos, menus laterais
+   e layouts em grid/flex de todas as páginas, para adaptação
+   a tablets e celulares.
+   ============================================================ */
+
+/* ── Cabeçalho amarelo (logo + CEP + busca + ícones + carrinho) ── */
+@media (max-width: 860px) {
+  .ht-header-bar {
+    flex-wrap: wrap !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 10px 14px !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    row-gap: 10px !important;
+    gap: 10px !important;
+  }
+
+  /* Logo vai para a direita (order alto) */
+  .ht-header-bar > div:first-child {
+    order: 10;
+    margin-left: auto;
+  }
+
+  /* CEP some em telas menores */
+  .ht-cep-wrap {
+    display: none !important;
+  }
+
+  /* Busca ocupa a linha inteira abaixo */
+  .ht-search-wrap {
+    order: 20;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  /* Redes sociais somem */
+  .ht-social-wrap {
+    display: none !important;
+  }
+
+  /* Ícone usuário fica à esquerda da busca (order baixo) */
+  .ht-user-wrap {
+    order: 1;
+  }
+
+  /* Botão carrinho fica ao lado do usuário */
+  .ht-cart-btn {
+    order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .ht-header-bar img[alt="HarpyToys"] {
+    width: 70px !important;
+    height: 50px !important;
+  }
+
+  .ht-header-bar button {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+  }
+
+  .ht-header-bar span {
+    font-size: 11px !important;
+  }
+}
+
+/* ── Barra verde de categorias ── */
+@media (max-width: 860px) {
+  .ht-nav-bar {
+    padding: 6px 12px !important;
+  }
+
+  .ht-nav-inner {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .ht-nav-inner a,
+  .ht-nav-inner button {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .ht-nav-inner::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+/* ── Menu lateral (Departamentos / Categorias) ── */
+@media (max-width: 480px) {
+  .ht-side-menu {
+    width: 85vw !important;
+    max-width: 320px !important;
+  }
+}
+
+/* ── Header fixo da Home + compensação do <main> ── */
+@media (max-width: 860px) {
+  .ht-header-fixed {
+    position: sticky !important;
+    top: 0 !important;
+  }
+
+  .ht-main-fixed {
+    padding-top: 24px !important;
+  }
+}
+
+/* ── Vitrine: filtros + grade de produtos ── */
+@media (max-width: 900px) {
+  .vit-layout {
+    flex-direction: column !important;
+  }
+
+  .vit-aside {
+    width: 100% !important;
+    position: static !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── Produto: galeria + informações em 1 coluna no mobile ── */
+@media (max-width: 860px) {
+  .prod-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ── Containers de página com padding grande — reduz no mobile ── */
+@media (max-width: 600px) {
+  .ht-page-content {
+    padding: 16px !important;
+  }
+}
+
+/* ── Evita overflow horizontal global ── */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
