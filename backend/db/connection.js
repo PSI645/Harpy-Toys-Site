@@ -14,7 +14,10 @@ const pool = mysql.createPool({
 });
 
 pool.getConnection()
-  .then(conn => { console.log("✅ MySQL conectado!"); conn.release(); })
+  .then(conn => { 
+    console.log("✅ MySQL conectado com sucesso no Railway!"); 
+    conn.release(); 
+  })
   .catch(err => console.error("❌ Erro MySQL:", err.message));
 
 module.exports = pool;
