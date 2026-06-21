@@ -22,7 +22,7 @@ app.use(cors({
     "http://localhost:5174",
     "http://localhost:4173",
     "http://localhost:4174",
-    "https://seu-cliente.up.railway.app",
+    "https://Harpy-Toys.up.railway.app",
     "https://seu-admin.up.railway.app",
     ...origensProducao,
   ],
