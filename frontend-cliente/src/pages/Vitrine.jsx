@@ -6,7 +6,7 @@ import Logo from "../assets/Logo_2.png";
 import { MOCK_PRODUTOS, CATEGORIAS } from "../data/mockProdutos";
 
 // ── Quando integrar com banco, veja INTEGRACAO_BANCO.md ───────────────────────
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 function Estrelas({ n }) {
   return (

@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import FundoLogin from "../assets/backsite.png";
 import Logo from "../assets/Logo.png";
 
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export default function RedefinirSenha() {
   const navigate = useNavigate();

@@ -31,7 +31,7 @@ const PROMOTIONS = [
   { label: "Coleções",    bg: "#607D8B", icon: "🗂️", slug: "geek" },
 ];
 
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const FALLBACK = "https://placehold.co/180x160/eee/999?text=Produto";
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────

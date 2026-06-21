@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Logo from "../assets/Logo.png";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
 const FALLBACK = "https://placehold.co/60x60/eee/999?text=Prod";
 
 function formatCEP(v) {
@@ -352,7 +354,7 @@ export default function FinalizarPedido() {
   // Carrega dados do perfil e endereço cadastrado ao montar
   useEffect(() => {
     if (!usuarioLogado?.id) return;
-    fetch(`http://localhost:3001/api/clientes/${usuarioLogado.id}`)
+    fetch(`${API_URL}/api/clientes/...`)
       .then(r => r.json())
       .then(dados => {
         if (dados.nome)     setNome(dados.nome);
@@ -511,20 +513,20 @@ export default function FinalizarPedido() {
     }));
 
     try {
-      const resposta = await fetch("http://localhost:3001/api/pedidos", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cliente_id: usuarioLogado.id,
-          forma_pagamento: formaPagamentoBanco,
-          valor_total: totalFinal,
-          valor_frete: modoEntrega === "loja" ? 0 : frete,
-          endereco_entrega: enderecoEntrega,
-          itens: itensPedido,
-        }),
-      });
+      const resposta = await fetch(`${API_URL}/api/pedidos`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    cliente_id: usuarioLogado.id,
+    forma_pagamento: formaPagamentoBanco,
+    valor_total: totalFinal,
+    valor_frete: modoEntrega === "loja" ? 0 : frete,
+    endereco_entrega: enderecoEntrega,
+    itens: itensPedido,
+  }),
+});
 
       const resultado = await resposta.json();
 

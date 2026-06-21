@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import Sidebar from '../components/Sidebar'
 import api from '../services/api'
 
-const BASE_URL = 'http://localhost:3001'
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 export default function ListagemProdutos() {
     const [pesquisa, setPesquisa] = useState('')

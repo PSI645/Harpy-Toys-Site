@@ -6,7 +6,7 @@ import Instagram from "../assets/instagram.png";
 import Whatsapp from "../assets/whatsapp.png";
 
 const NAV_LINKS = ["Lançamentos", "Ofertas", "Brinquedos Nacionais", "Área para Garotos", "Área para Garotas"];
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export default function PerfilConta() {
   const navigate = useNavigate();

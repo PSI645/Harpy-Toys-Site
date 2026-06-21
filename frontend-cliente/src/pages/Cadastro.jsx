@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import FundoCadastro from "../assets/backcadastro1.png";
 
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export default function Cadastro() {
   const navigate = useNavigate();

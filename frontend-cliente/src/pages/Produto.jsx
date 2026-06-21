@@ -6,7 +6,7 @@ import Instagram from "../assets/instagram.png";
 import Whatsapp  from "../assets/whatsapp.png";
 import { CATEGORIAS } from "../data/mockProdutos";
 
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 function Estrelas({ n, size = 18 }) {
   return (

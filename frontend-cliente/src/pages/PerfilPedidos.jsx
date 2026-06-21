@@ -5,7 +5,7 @@ import Logo from "../assets/Logo.png";
 import Instagram from "../assets/instagram.png";
 import Whatsapp from "../assets/whatsapp.png";
 
-const API_URL = "http://localhost:3001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 const STATUS_COLORS = {
   pendente:     { bg: "#fff8e1", color: "#f57f17", border: "#ffe082",   label: "Pendente" },

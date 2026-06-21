@@ -9,10 +9,12 @@ const clientesAuthRoutes     = require("./routes/auth.clientes");
 const funcionariosAuthRoutes = require("./routes/auth.funcionarios");
 const produtosRoutes         = require("./routes/produtos");
 
-const app = express();
+const app  = express();
+const PORT = process.env.PORT || 3001;
 
-// ✅ Apenas UMA declaração de PORT
-const PORT = process.env.PORT || 8080;
+const origensProducao = process.env.FRONTEND_URLS
+  ? process.env.FRONTEND_URLS.split(",").map(s => s.trim())
+  : [];
 
 app.use(cors({
   origin: [
@@ -20,6 +22,7 @@ app.use(cors({
     "http://localhost:5174",
     "http://localhost:4173",
     "http://localhost:4174",
+    ...origensProducao,
   ],
   credentials: true,
 }));
