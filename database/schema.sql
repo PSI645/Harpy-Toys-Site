@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS clientes (
     ultimo_acesso DATETIME NULL
 );
 
+select * from produtos;
+
 CREATE TABLE IF NOT EXISTS usuarios_sistema (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -107,22 +109,24 @@ CREATE TABLE IF NOT EXISTS tokens_recuperacao (
 );
 
 INSERT IGNORE INTO categorias (nome, slug) VALUES 
-('Brinquedos Educativos', 'educativos'),
-('Pelúcias',              'pelucias'),
-('Bonecas e Bonecos',     'bonecas'),
-('Carrinhos',             'carrinhos'),
-('Jogos de Tabuleiro',    'jogos'),
-('Quebra-Cabeças',        'quebra-cabecas'),
-('Esportes',              'esportes'),
-('Ao Ar Livre',           'ao-ar-livre'),
-('Baby',                  'baby'),
-('Geek e Colecionáveis',  'geek'),
-('Ofertas',               'ofertas'),
-('Área para Garotos',     'garotos'),
-('Área para Garotas',     'garotas'),
-('Até 80% OFF',           'ate-80-off');
+('Brinquedos Educativos','educativos'),
+('Pelúcias','pelucias'),
+('Bonecas e Bonecos','bonecas'),
+('Carrinhos','carrinhos'),
+('Jogos de Tabuleiro','jogos'),
+('Quebra-Cabeças','quebra-cabecas'),
+('Esportes','esportes'),
+('Ao Ar Livre','ao-ar-livre'),
+('Baby','baby'),
+('Geek e Colecionáveis','geek'),
+('Ofertas','ofertas'),
+('Área para Garotos','garotos'),
+('Área para Garotas','garotas'),
+('Até 80% OFF','ate-80-off'),
+('Nacionais','nacionais'),
+('Lançamentos', 'lancamentos');
 
-
+INSERT IGNORE INTO categorias (nome, slug) VALUES
 
 -- Hash bcrypt de 'admin123': $2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi
 INSERT IGNORE INTO usuarios_sistema (nome, email, senha_hash, perfil)

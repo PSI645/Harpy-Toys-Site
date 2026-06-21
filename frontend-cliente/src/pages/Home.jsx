@@ -23,13 +23,12 @@ const NAV_LINKS = [
 ];
 
 const PROMOTIONS = [
-  { label: "Novidades",   bg: "#4CAF50", icon: "🌟", slug: "educativos" },
-  { label: "Liquida",     bg: "#FF9800", icon: "🔥", slug: "carrinhos" },
-  { label: "Até 80% OFF", bg: "#F44336", icon: "🏷️", slug: "carrinhos" },
-  { label: "Livros",      bg: "#9C27B0", icon: "📚", slug: "educativos" },
-  { label: "Frete Grátis",bg: "#2196F3", icon: "🚚", slug: "pelucias" },
-  { label: "Jogos",       bg: "#FF5722", icon: "🎮", slug: "jogos" },
-  { label: "Coleções",    bg: "#607D8B", icon: "🗂️", slug: "jogos" },
+  { label: "Novidades",   bg: "#4CAF50", icon: "🌟", slug: "Lançamentos" },
+  { label: "Liquida",     bg: "#FF9800", icon: "🔥", slug: "ofertas" },
+  { label: "Até 80% OFF", bg: "#F44336", icon: "🏷️", slug: "Ate-80%-OFF" },
+  { label: "Livros",      bg: "#9C27B0", icon: "📚", slug: "Livros" },
+  { label: "Jogos",       bg: "#FF5722", icon: "🎮", slug: "jogos1" },
+  { label: "Coleções",    bg: "#607D8B", icon: "🗂️", slug: "geek" },
 ];
 
 const API_URL = "http://localhost:3001";
@@ -288,12 +287,11 @@ function Carousel() {
 function BrandsSection() {
   const navigate = useNavigate();
   const brandLogos = [
-    { name: "LEGO",         src: LegoLogo,        slug: "educativos", border: "#d0d0d0" },
-    { name: "Pokémon",      src: PokemonLogo,      slug: "educativos", border: "#d0d0d0" },
+    { name: "LEGO",         src: LegoLogo,        slug: "geek", border: "#d0d0d0" },
     { name: "Hot Wheels",   src: HotWheelsLogo,    slug: "carrinhos",  border: "#CC0000" },
-    { name: "Transformers", src: TransformersLogo, slug: "carrinhos",  border: "#444"    },
+    { name: "Transformers", src: TransformersLogo, slug: "bonecas",  border: "#444"    },
     { name: "Barbie",       src: BarbieLogo,       slug: "bonecas",    border: "#E91E8C" },
-    { name: "Disney",       src: DisneyLogo,       slug: "bonecas",    border: "#003087" },
+    { name: "Disney",       src: DisneyLogo,       slug: "geek",    border: "#003087" },
   ];
 
   return (
@@ -887,6 +885,7 @@ export default function Home() {
             { label: "Bonecas e Bonecos", slug: "bonecas" },
             { label: "Carrinhos", slug: "carrinhos" },
             { label: "Jogos de Tabuleiro", slug: "jogos" },
+            { label: "Jogos", slug: "jogos1" },
             { label: "Quebra-Cabeças", slug: "Quebra-Cabeças" },
             { label: "Esportes", slug: "esportes" },
             { label: "Ao Ar Livre", slug: "ao-ar-livre" },

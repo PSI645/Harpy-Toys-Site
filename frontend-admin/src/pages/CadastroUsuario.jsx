@@ -86,6 +86,7 @@ export default function CadastroUsuario() {
                                     <option value='estoque'>Estoque</option>
                                     <option value='vendedor'>Vendedor</option>
                                     <option value='suporte'>Suporte</option>
+                                    <option value='admin'>Administrador</option>
                                 </select>
                                 <span className='hint'>
                                     Define quais telas e ações este usuário poderá acessar.

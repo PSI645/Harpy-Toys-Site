@@ -16,7 +16,7 @@ export default function CadastroProduto() {
     const [categorias, setCategorias] = useState([])
 
     // Slugs das categorias "etiqueta" — segunda forma de categorizar o produto
-    const SLUGS_SECUNDARIAS = ['ofertas', 'garotos', 'garotas', 'ate-80-off']
+    const SLUGS_SECUNDARIAS = ['ofertas', 'garotos', 'garotas', 'ate-80-off', 'nacionais']
     const categoriasPrincipais  = categorias.filter(c => !SLUGS_SECUNDARIAS.includes(c.slug))
     const categoriasSecundarias = categorias.filter(c => SLUGS_SECUNDARIAS.includes(c.slug))
 

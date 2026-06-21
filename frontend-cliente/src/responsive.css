@@ -32,7 +32,6 @@
   /* Busca ocupa a linha inteira abaixo */
   .ht-search-wrap {
     order: 20;
-    flex: 1 1 100% !important;
     max-width: 100% !important;
     min-width: 0;
   }

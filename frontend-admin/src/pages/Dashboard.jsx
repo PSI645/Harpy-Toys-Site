@@ -97,7 +97,6 @@ export default function Dashboard() {
                 {/* KPIs */}
                 <div className='kpi-grid'>
                     <div className='kpi-card'>
-                        <span className='kpi-icon'>🧾</span>
                         <div>
                             <span className='kpi-label'>Total de Pedidos</span>
                             <strong className='kpi-value'>{resumo ? resumo.total_pedidos : '—'}</strong>
@@ -105,7 +104,6 @@ export default function Dashboard() {
                     </div>
 
                     <div className='kpi-card'>
-                        <span className='kpi-icon'>💰</span>
                         <div>
                             <span className='kpi-label'>Faturamento Total</span>
                             <strong className='kpi-value kpi-success'>{resumo ? fmtPreco(resumo.faturamento_total) : '—'}</strong>
@@ -113,20 +111,12 @@ export default function Dashboard() {
                     </div>
 
                     <div className='kpi-card'>
-                        <span className='kpi-icon'>⏳</span>
                         <div>
                             <span className='kpi-label'>Pedidos Pendentes</span>
                             <strong className='kpi-value kpi-warning'>{resumo ? resumo.pedidos_pendentes : '—'}</strong>
                         </div>
                     </div>
 
-                    <div className='kpi-card'>
-                        <span className='kpi-icon'>📊</span>
-                        <div>
-                            <span className='kpi-label'>Ticket Médio</span>
-                            <strong className='kpi-value'>{resumo ? fmtPreco(resumo.ticket_medio) : '—'}</strong>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Tabela de pedidos */}

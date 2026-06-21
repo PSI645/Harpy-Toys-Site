@@ -25,7 +25,7 @@ export default function TelaPrincipal() {
 
                 {/* Dashboard de Pedidos — acesso rápido, acima das demais opções */}
                 <div className='card-area'>
-                    <h1>📊 Dashboard de Pedidos</h1>
+                    <h1> Dashboard de Pedidos</h1>
                     <p>Acompanhe vendas, faturamento e status dos pedidos</p>
                     <div className='links-area'>
                         <Link to='/dashboard'>Ver Dashboard</Link>
