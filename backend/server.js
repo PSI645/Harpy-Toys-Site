@@ -12,7 +12,7 @@ const produtosRoutes         = require("./routes/produtos");
 const app = express();
 
 // ✅ Apenas UMA declaração de PORT
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors({
   origin: [
