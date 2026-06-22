@@ -103,7 +103,7 @@ export default function Cadastro() {
       `}</style>
 
       {/* ── LADO ESQUERDO — imagem + logo ── */}
-      <div style={s.left}>
+      <div className="cad-left" style={s.left}>
         <img src={FundoCadastro} alt="" style={s.bgImg} />
         <div style={s.leftOverlay} />
 
@@ -114,7 +114,7 @@ export default function Cadastro() {
       </div>
 
       {/* ── LADO DIREITO — formulário ── */}
-      <div style={s.right}>
+      <div className="cad-right" style={s.right}>
         <div style={s.card}>
           {/* Título */}
           <div style={s.tituloWrap}>
@@ -124,7 +124,7 @@ export default function Cadastro() {
           <form onSubmit={handleCadastrar} style={s.form} noValidate>
 
             {/* Nome */}
-            <div style={s.row}>
+            <div className="cad-row" style={s.row}>
               <label style={s.label}>Nome:</label>
               <input
                 className="cad-input"
@@ -137,7 +137,7 @@ export default function Cadastro() {
             </div>
 
             {/* Email */}
-            <div style={s.row}>
+            <div className="cad-row" style={s.row}>
               <label style={s.label}>Email:</label>
               <input
                 className="cad-input"
@@ -150,7 +150,7 @@ export default function Cadastro() {
             </div>
 
             {/* Telefone */}
-            <div style={s.row}>
+            <div className="cad-row" style={s.row}>
               <label style={s.label}>Telefone:</label>
               <div style={s.telWrap}>
                 <input
@@ -175,7 +175,7 @@ export default function Cadastro() {
             </div>
 
             {/* Senha */}
-            <div style={s.row}>
+            <div className="cad-row" style={s.row}>
               <label style={s.label}>Senha:</label>
               <input
                 className="cad-input"
@@ -188,7 +188,7 @@ export default function Cadastro() {
             </div>
 
             {/* Confirma */}
-            <div style={s.row}>
+            <div className="cad-row" style={s.row}>
               <label style={s.label}>Confirma:</label>
               <input
                 className="cad-input"
