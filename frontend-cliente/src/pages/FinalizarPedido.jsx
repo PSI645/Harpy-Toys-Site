@@ -354,7 +354,7 @@ export default function FinalizarPedido() {
   // Carrega dados do perfil e endereço cadastrado ao montar
   useEffect(() => {
     if (!usuarioLogado?.id) return;
-    fetch(`${API_URL}/api/clientes/login`)
+    fetch(`${API_URL}/api/clientes`)
       .then(r => r.json())
       .then(dados => {
         if (dados.nome)     setNome(dados.nome);
