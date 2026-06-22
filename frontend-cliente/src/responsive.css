@@ -146,3 +146,59 @@
     overflow-x: hidden;
   }
 }
+
+/* =============================================
+   CADASTRO MOBILE - Só tela azul
+   ============================================= */
+
+@media (max-width: 860px) {
+  .cad-page {
+    flex-direction: column !important;
+  }
+
+  /* Esconde completamente o lado amarelo */
+  .cad-left {
+    display: none !important;
+  }
+
+  /* Tela azul ocupa 100% */
+  .cad-right {
+    width: 100% !important;
+    min-height: 100vh !important;
+    padding: 20px 16px !important;
+    background: #013E79 !important;
+  }
+
+  .cad-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 16px !important;
+  }
+
+  .cad-titulo {
+    font-size: 1.45rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  .cad-input {
+    font-size: 1.05rem !important;
+    padding: 14px 16px !important;
+  }
+
+  .cad-botoes {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .cad-btn {
+    width: 100% !important;
+    padding: 16px 0 !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cad-right {
+    padding: 16px 12px !important;
+  }
+}

@@ -476,7 +476,7 @@ function Footer() {
           <a href="#" style={{ color: "#FFDF26", marginRight: 16, fontSize: 11 }}>TERMOS DE USO</a>
           <a href="#" style={{ color: "#FFDF26", fontSize: 11 }}>PROTEÇÃO DE DADOS</a>
         </div>
-        R. Guaipá, 678 - Vila Leopoldina, São Paulo - SP, 05089-000 | © 2025 HarpyToys. Todos os direitos reservados.
+        R. Guaipá, 678 - Vila Leopoldina, São Paulo - SP, 05089-000 | © 2026 HarpyToys. Todos os direitos reservados.
       </div>
     </footer>
   );
