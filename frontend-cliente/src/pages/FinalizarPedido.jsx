@@ -353,23 +353,16 @@ export default function FinalizarPedido() {
 
   // Carrega dados do perfil e endereço cadastrado ao montar
   useEffect(() => {
-    if (!usuarioLogado?.id) return;
-    fetch(`${API_URL}/api/clientes/me`)
-      .then(r => r.json())
-      .then(dados => {
-        if (dados.nome)     setNome(dados.nome);
-        if (dados.email)    setEmail(dados.email);
-        if (dados.telefone) setTelefone(formatPhone(dados.telefone));
-        const end = dados.endereco;
-        if (end) {
-          if (end.cep)         setCep(end.cep.replace(/\D/g,"").replace(/(\d{5})(\d{3})/,"$1-$2"));
-          if (end.numero)      setNumero(end.numero);
-          if (end.complemento) setComplemento(end.complemento);
-          if (end.nome_endereco) setDestinatario(end.nome_endereco);
-        }
-      })
-      .catch(() => {});
-  }, []);
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  
+  if (usuario) {
+    setForm({
+      nome: usuario.nome || "",
+      email: usuario.email || "",
+      telefone: usuario.telefone || "",
+    });
+  }
+}, []);
   const [modoEntrega, setModoEntrega] = useState("casa");
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
@@ -547,7 +540,7 @@ export default function FinalizarPedido() {
   const handleSuccessClose = () => { setShowSuccess(false); navigate("/"); };
 
   const meses = [{ value: "", label: "Mês" }, ...Array.from({ length: 12 }, (_, i) => { const m = String(i + 1).padStart(2, "0"); return { value: m, label: m }; })];
-  const anos = [{ value: "", label: "Ano" }, ...Array.from({ length: 12 }, (_, i) => { const y = 2025 + i; return { value: String(y), label: String(y) }; })];
+  const anos = [{ value: "", label: "Ano" }, ...Array.from({ length: 12 }, (_, i) => { const y = 2026 + i; return { value: String(y), label: String(y) }; })];
   const parcelasOpts = [{ value: "", label: "Em quantas parcelas deseja pagar?" }, ...Array.from({ length: 12 }, (_, i) => ({ value: String(i + 1), label: i === 0 ? `1x de ${fmtPrice(total)} (à vista)` : `${i + 1}x de ${fmtPrice(total / (i + 1))}` }))];
 
   const enderecoFull = [logradouro, bairro, cidade, estado].filter(Boolean).join(", ");
