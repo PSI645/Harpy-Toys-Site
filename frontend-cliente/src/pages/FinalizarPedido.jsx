@@ -353,16 +353,23 @@ export default function FinalizarPedido() {
 
   // Carrega dados do perfil e endereço cadastrado ao montar
   useEffect(() => {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  
-  if (usuario) {
-    setForm({
-      nome: usuario.nome || "",
-      email: usuario.email || "",
-      telefone: usuario.telefone || "",
-    });
-  }
-}, []);
+    if (!usuarioLogado?.id) return;
+    fetch(`${API_URL}/api/clientes/me`)
+      .then(r => r.json())
+      .then(dados => {
+        if (dados.nome)     setNome(dados.nome);
+        if (dados.email)    setEmail(dados.email);
+        if (dados.telefone) setTelefone(formatPhone(dados.telefone));
+        const end = dados.endereco;
+        if (end) {
+          if (end.cep)         setCep(end.cep.replace(/\D/g,"").replace(/(\d{5})(\d{3})/,"$1-$2"));
+          if (end.numero)      setNumero(end.numero);
+          if (end.complemento) setComplemento(end.complemento);
+          if (end.nome_endereco) setDestinatario(end.nome_endereco);
+        }
+      })
+      .catch(() => {});
+  }, []);
   const [modoEntrega, setModoEntrega] = useState("casa");
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
